@@ -16,7 +16,20 @@ var commentRoutes=require("./routes/comments");
 var indexRoutes=require("./routes/index");
 // fetch('/api/foo', {credentials: 'include'});
 // seedDB();
-mongoose.connect('mongodb://localhost:27017/newtest', {useNewUrlParser:true,
+
+
+
+// mongoose.connect('mongodb://localhost:27017/newtest', {useNewUrlParser:true,
+// 	useCreateIndex:true,
+// 	useUnifiedTopology:true
+// }).then(()=>{
+// 	console.log('connected to db');
+// }).catch(err=>{
+// 	console.log('error'.err.message); });
+
+
+
+mongoose.connect('mongodb+srv://ADMINUSER:dec19981213dec@cluster0-mqbxb.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser:true,
 	useCreateIndex:true,
 	useUnifiedTopology:true
 }).then(()=>{
