@@ -1,0 +1,90 @@
+<% include partials/header%>
+<div style="margin-top:100px">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+			<p class="lead">YELPCAMP</p>
+				<div class="list-group">
+					<li class="list-group-item active">info 1</li>
+					<li class="list-group-item">info 2</li>
+					<li class="list-group-item">info 3</li>
+				</div>
+			</div>
+	
+	<div class="col-md-9">
+		    <div style="padding:0" class="thumbnail">
+				
+				<h1 style="text-align:center">
+						<a href="#"><%=campground.name%></a>
+				</h1>
+				<img style="width:100%" src="<%=campground.image%>">
+				<hr>
+			 <div style="padding:5px">
+				<p>
+					<span>
+						<h4 class="pull-right">
+						$9.00/night					
+						</h4>
+					</span>
+					<%=campground.des%>
+				</p>
+					  <p>
+						  <%=campground.author.username%>
+				</p>
+			
+				<div>
+					
+						<a style="float:left" class="btn btn-warning" href="/campground/<%=campground._id%>/edit">EDIT</a>
+				
+					
+					<form style="Display:inline;margin-left:10px;" action="/campground/<%=campground._id%>?_method=DELETE" method="POST">
+						<button class="btn btn-danger">
+						DEL
+					   </button>
+				    </form>
+					<!-- </span> -->
+				</div>
+			</div>	
+				<!-- -->
+				  <!-- console.log("hello"); -->
+		
+				<div class="well">
+					<div class="text-right">
+						<a class="btn btn-primary" href="/campground/<%= campground._id%>/new1">ADD NEW COMMENT</a>	
+					</div>
+					<div class="row">
+						
+					</div>
+					<div class="row">
+						<div style="padding:0" class="col-md-11">
+							 <% campground.comments.forEach(function(comment){ %>
+							    <p>
+									<div style="margin-top:40px">
+										<span class="pull-right">10 days</span>
+									</div>
+								<p>
+								<%= comment.text %>
+							    </p>
+									<strong><%= comment.author.username %></strong>
+							    </p>
+								
+							<p>
+														    </p>
+								<a class="btn btn-xs btn-warning" href="/campground/<%= campground._id%>/comment/<%= comment._id%>/edit">EDIT
+							</a>
+							<form style="Display:inline" action="/campground/<%=campground._id%>/comment/<%= comment._id%>?_method=DELETE" method="POST">
+								<button  class="btn btn-xs btn-danger">
+								DEL
+							    </button>
+							</form>
+							    <%	}) %>
+							
+					</div>
+					</div>
+					
+				</div>
+			</div>
+	</div>
+   </div>
+  </div>
+</div>
