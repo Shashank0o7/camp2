@@ -19,23 +19,23 @@ var indexRoutes=require("./routes/index");
 
 
 
-// mongoose.connect('mongodb://localhost:27017/newtest', {useNewUrlParser:true,
-// 	useCreateIndex:true,
-// 	useUnifiedTopology:true
-// }).then(()=>{
-// 	console.log('connected to db');
-// }).catch(err=>{
-// 	console.log('error'.err.message); });
-
-
-
-mongoose.connect('mongodb+srv://ADMINUSER:dec19981213dec@cluster0-mqbxb.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser:true,
+mongoose.connect('mongodb://localhost:27017/newtest', {useNewUrlParser:true,
 	useCreateIndex:true,
 	useUnifiedTopology:true
 }).then(()=>{
 	console.log('connected to db');
 }).catch(err=>{
 	console.log('error'.err.message); });
+
+
+
+// mongoose.connect('mongodb+srv://ADMINUSER:dec19981213dec@cluster0-mqbxb.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser:true,
+// 	useCreateIndex:true,
+// 	useUnifiedTopology:true
+// }).then(()=>{
+// 	console.log('connected to db');
+// }).catch(err=>{
+// 	console.log('error'.err.message); });
 // mongoose.connect('mongodb+srv://ADMINUSER:dec19981213dec@cluster0-mqbxb.mongodb.net/test?retryWrites=true&w=majority',{
 // 	useNewUrlParser:true, 
 // 	useCreateIndex:true,
@@ -100,7 +100,13 @@ app.use(indexRoutes);
 app.use(campgroundRoutes);
 app.use(commentRoutes);
 
-app.listen(3000,function(){
-	console.log("server started");
+// app.listen(3000,function(){
+// 	console.log("server started");
+// });
+app.listen(process.env.PORT || 5000, function() {
+    console.log("Server started.......");
 });
+// app.listen(process.env.PORT,process.env.IP,function(){
+// 	console.log("server started");
+// });
  
