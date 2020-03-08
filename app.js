@@ -19,32 +19,32 @@ var indexRoutes=require("./routes/index");
 
 
 
-mongoose.connect('mongodb://localhost:27017/newtest', {useNewUrlParser:true,
-	useCreateIndex:true,
-	useUnifiedTopology:true
-}).then(()=>{
-	console.log('connected to db');
-}).catch(err=>{
-	console.log('error'.err.message); });
-
-
-
-// mongoose.connect('mongodb+srv://ADMINUSER:dec19981213dec@cluster0-mqbxb.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser:true,
+// mongoose.connect('mongodb://localhost:27017/newtest', {useNewUrlParser:true,
 // 	useCreateIndex:true,
 // 	useUnifiedTopology:true
 // }).then(()=>{
 // 	console.log('connected to db');
 // }).catch(err=>{
 // 	console.log('error'.err.message); });
-// mongoose.connect('mongodb+srv://ADMINUSER:dec19981213dec@cluster0-mqbxb.mongodb.net/test?retryWrites=true&w=majority',{
-// 	useNewUrlParser:true, 
-// 	useCreateIndex:true,
-// 	useUnifiedTopology:true
-// }).then(()=>{
-// 	console.log('connected to db');
-// }).catch(err=>{
-// 	console.log('error'.err.message);
-// });
+
+
+
+mongoose.connect('mongodb+srv://ADMINUSER:dec19981213dec@cluster0-mqbxb.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser:true,
+	useCreateIndex:true,
+	useUnifiedTopology:true
+}).then(()=>{
+	console.log('connected to db');
+}).catch(err=>{
+	console.log('error'.err.message); });
+mongoose.connect('mongodb+srv://ADMINUSER:dec19981213dec@cluster0-mqbxb.mongodb.net/test?retryWrites=true&w=majority',{
+	useNewUrlParser:true, 
+	useCreateIndex:true,
+	useUnifiedTopology:true
+}).then(()=>{
+	console.log('connected to db');
+}).catch(err=>{
+	console.log('error'.err.message);
+});
 app.use( methodOverride("_method"));
 app.use(bodyparser.urlencoded({extended:true}));
 app.set("view engine","ejs");
